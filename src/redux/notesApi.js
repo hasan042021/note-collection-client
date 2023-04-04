@@ -1,9 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { REHYDRATE } from "redux-persist";
 export const notesApi = createApi({
   reducerPath: "notesApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/api/notes/",
+    baseUrl: "https://note-collection-server.onrender.com/api/v1/",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().userReducer.userInfo.token;
       console.log(token);
